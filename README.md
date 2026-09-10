@@ -13,7 +13,7 @@ La base ya organiza el código con una separación sencilla y mantenible:
 - `entities/`: contratos y modelos de dominio del cliente.
 - `shared/`: componentes visuales, utilidades, configuración y cliente HTTP.
 
-Las rutas iniciales están disponibles en `/explorar`, `/biblioteca`, `/iniciar-sesion`, `/registro`, `/perfil` y `/suscripcion`. El App Router incorpora un estado global de carga y una frontera de error reutilizable. Cada pantalla es deliberadamente un estado inicial: las integraciones y formularios se agregan en sus historias correspondientes.
+Las rutas iniciales están disponibles en `/explore`, `/library`, `/sign-in`, `/register`, `/profile` y `/subscription`. El App Router incorpora un estado global de carga y una frontera de error reutilizable. Cada pantalla es deliberadamente un estado inicial: las integraciones y formularios se agregan en sus historias correspondientes.
 
 La primera visita será una experiencia de visitante. No mostrará perfiles ni datos de ejemplo como si pertenecieran al usuario actual.
 
