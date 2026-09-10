@@ -12,6 +12,11 @@ export const publicEnvironment: PublicEnvironment = {
 
 export function readServerEnvironment() {
     const frontendToken = process.env.HISTORY_FRONTEND_TOKEN;
+    const historyApiUrl = optionalUrl(
+        process.env.HISTORY_API_URL ?? process.env.NEXT_PUBLIC_HISTORY_API_URL,
+        'HISTORY_API_URL',
+    );
     if (!frontendToken) throw new Error('HISTORY_FRONTEND_TOKEN is required on the server');
-    return { historyFrontendToken: frontendToken };
+    if (!historyApiUrl) throw new Error('HISTORY_API_URL is required on the server');
+    return { historyApiUrl, historyFrontendToken: frontendToken };
 }
