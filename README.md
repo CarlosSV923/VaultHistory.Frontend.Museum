@@ -33,6 +33,10 @@ pnpm dev
 
 `NEXT_PUBLIC_HISTORY_API_URL` y `NEXT_PUBLIC_USER_API_URL` son orígenes públicos configurables. `HISTORY_FRONTEND_TOKEN` es exclusivamente de servidor: no se debe renombrar con el prefijo `NEXT_PUBLIC_` ni incluir en el cliente.
 
+## Tema y accesibilidad
+
+El control del encabezado alterna entre temas claro y oscuro. La elección se guarda en el navegador y un script previo a la hidratación aplica el tema para evitar destellos al cargar. La interfaz incorpora foco visible, navegación mediante teclado, un enlace para saltar a contenido y respeta la reducción de movimiento del sistema.
+
 ## Ramas y contribución
 
 - `main` es la rama estable y predeterminada.
