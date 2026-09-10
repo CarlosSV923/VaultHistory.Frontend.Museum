@@ -38,6 +38,29 @@ button, input, select, textarea { font: inherit; }
 .story-card__theme { color: var(--lavender-deep); font-size: .78rem; }
 .story-card h3 { max-width: 17ch; margin: 2rem 0; font-family: Georgia, 'Times New Roman', serif; font-size: 1.7rem; font-weight: 400; letter-spacing: -.045em; line-height: 1.05; }
 .story-card__footer { display: flex; justify-content: space-between; color: var(--muted); font-size: .78rem; }
+.visitor-experience { display: grid; grid-template-columns: minmax(16rem, .8fr) minmax(20rem, 1.2fr); gap: 1px; margin-top: 3.5rem; border: 1px solid var(--line); background: var(--line); }
+.visitor-experience__intro, .story-form { padding: clamp(1.4rem, 3vw, 2.4rem); background: var(--surface); }
+.visitor-experience__intro h2, .visitor-library h2, .limit-dialog h2 { margin: 0; font-family: Georgia, 'Times New Roman', serif; font-weight: 400; font-size: clamp(1.8rem, 3vw, 2.8rem); letter-spacing: -.05em; line-height: 1; }
+.visitor-experience__intro > p:not(.route__eyebrow), .limit-dialog p { color: var(--muted); line-height: 1.55; }
+.story-form { display: grid; align-content: start; gap: 1rem; background: var(--surface-alt); }
+.story-form label { display: grid; gap: .45rem; color: var(--muted); font-size: .86rem; }
+.story-form input { min-height: 2.8rem; width: 100%; padding: .65rem .75rem; color: var(--ink); background: var(--surface); border: 1px solid var(--line); border-radius: .2rem; }
+.story-form button, .limit-dialog__actions a, .limit-dialog__actions button { min-height: 2.7rem; padding: .65rem 1rem; color: var(--surface); background: var(--lavender-deep); border: 1px solid var(--lavender-deep); cursor: pointer; text-align: center; }
+.story-form button:disabled { opacity: .65; cursor: wait; }
+.usage, .form-message { margin: 0; color: var(--muted); font-size: .9rem; }
+.form-message { color: #a13c2f; }
+.visitor-library { grid-column: 1 / -1; padding: clamp(1.4rem, 3vw, 2.4rem); background: var(--surface); }
+.visitor-library .section-heading { margin: 0 0 1.2rem; }
+.library-state { padding: 1rem; color: var(--muted); background: var(--paper); }
+.library-state button { margin-left: .75rem; color: var(--lavender-deep); background: transparent; border: 0; cursor: pointer; text-decoration: underline; }
+.visitor-stories { display: grid; grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr)); gap: 1px; background: var(--line); border: 1px solid var(--line); }
+.visitor-stories article { min-height: 11rem; padding: 1.1rem; background: var(--paper); }
+.visitor-stories article p { margin: 0 0 1.2rem; color: var(--lavender-deep); font-size: .8rem; }
+.visitor-stories article span { display: -webkit-box; overflow: hidden; line-height: 1.55; -webkit-line-clamp: 4; -webkit-box-orient: vertical; }
+.limit-dialog { position: fixed; z-index: 4; inset: 0; display: grid; place-items: center; padding: 1.25rem; background: rgb(28 23 40 / 65%); }
+.limit-dialog > div { max-width: 34rem; padding: clamp(1.6rem, 5vw, 3rem); background: var(--surface); box-shadow: 0 1.5rem 5rem rgb(12 9 20 / 35%); }
+.limit-dialog__actions { display: flex; flex-wrap: wrap; gap: .65rem; margin-top: 1.5rem; }
+.limit-dialog__actions button { color: var(--ink); background: transparent; border-color: var(--line); }
 .route__eyebrow { margin: 0 0 .9rem; color: var(--lavender-deep); font-size: .86rem; font-weight: 700; }
 .route__card { max-width: 42rem; margin-top: 2.5rem; padding: 1.25rem 1.4rem; border-left: 3px solid var(--lavender); background: var(--surface); }
 .route__card p { margin-bottom: 0; }
@@ -45,5 +68,5 @@ button, input, select, textarea { font: inherit; }
 .state h1 { margin-top: 0; font-family: Georgia, 'Times New Roman', serif; font-weight: 400; }
 .state p { color: var(--muted); line-height: 1.5; }
 .state button { min-height: 2.5rem; margin-top: 1rem; padding: .5rem .9rem; color: var(--surface); background: var(--lavender-deep); border: 0; cursor: pointer; }
-@media (max-width: 760px) { .shell__header { grid-template-columns: 1fr auto; gap: .7rem; } .shell__nav { grid-column: 1 / -1; grid-row: 2; justify-content: flex-start; overflow-x: auto; flex-wrap: nowrap; } .explore__hero { grid-template-columns: 1fr; min-height: 0; padding-bottom: 2.5rem; } .explore__mark { min-height: 11rem; } .story-grid { grid-template-columns: 1fr; } }
+@media (max-width: 760px) { .shell__header { grid-template-columns: 1fr auto; gap: .7rem; } .shell__nav { grid-column: 1 / -1; grid-row: 2; justify-content: flex-start; overflow-x: auto; flex-wrap: nowrap; } .explore__hero, .visitor-experience { grid-template-columns: 1fr; min-height: 0; } .explore__hero { padding-bottom: 2.5rem; } .explore__mark { min-height: 11rem; } .story-grid { grid-template-columns: 1fr; } .visitor-library { grid-column: auto; } }
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; } }

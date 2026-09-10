@@ -37,6 +37,12 @@ pnpm dev
 
 El control del encabezado alterna entre temas claro y oscuro. La elección se guarda en el navegador y un script previo a la hidratación aplica el tema para evitar destellos al cargar. La interfaz incorpora foco visible, navegación mediante teclado, un enlace para saltar a contenido y respeta la reducción de movimiento del sistema.
 
+## Experiencia de visitante
+
+`/explore` permite crear y recuperar historias anónimas a través de `/api/anonymous-histories`. Esta ruta BFF lee `HISTORY_API_URL` y `HISTORY_FRONTEND_TOKEN` exclusivamente en el servidor, resuelve la IP de la solicitud y reenvía el contrato requerido por History. El navegador nunca recibe ese token ni usa `localStorage` como fuente de verdad para la cuota.
+
+Cuando History responde `429`, la interfaz muestra un diálogo con las opciones de crear cuenta, iniciar sesión o seguir explorando.
+
 ## Ramas y contribución
 
 - `main` es la rama estable y predeterminada.
