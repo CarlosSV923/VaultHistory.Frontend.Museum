@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import type { ReactNode } from 'react';
+import { ThemeToggle } from '@/shared/theme/theme-toggle';
 
 const navigation = [
     { href: '/explore', label: 'Explorar' },
@@ -9,5 +10,5 @@ const navigation = [
 ];
 
 export function AppShell({ children }: Readonly<{ children: ReactNode }>) {
-    return <div className="shell"><header className="shell__header"><Link className="shell__brand" href="/explore">Vault History</Link><nav aria-label="Navegación principal" className="shell__nav">{navigation.map((item) => <Link key={item.href} href={item.href}>{item.label}</Link>)}</nav></header>{children}</div>;
+    return <div className="shell"><a className="skip-link" href="#main-content">Saltar al contenido</a><header className="shell__header"><Link className="shell__brand" href="/explore"><span aria-hidden="true">VH</span><span>Vault History</span></Link><nav aria-label="Navegación principal" className="shell__nav">{navigation.map((item) => <Link key={item.href} href={item.href}>{item.label}</Link>)}</nav><ThemeToggle /></header>{children}</div>;
 }
