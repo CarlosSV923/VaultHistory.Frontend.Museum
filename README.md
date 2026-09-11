@@ -47,6 +47,26 @@ El control del encabezado alterna entre temas claro y oscuro. La elección se gu
 
 Cuando History responde `429`, la interfaz muestra un diálogo con las opciones de crear cuenta, iniciar sesión o seguir explorando.
 
+## Calidad, pruebas y entrega
+
+El repositorio verifica la aplicación por capas:
+
+```bash
+pnpm validate:env
+pnpm lint
+pnpm typecheck
+pnpm test:unit
+pnpm build
+pnpm exec playwright install chromium # solo en el primer E2E local
+pnpm test:e2e
+```
+
+`pnpm verify` ejecuta la secuencia completa. Las pruebas unitarias y de componentes usan Vitest con React Testing Library. Playwright cubre en Chromium el límite diario de visitante, persistencia del tema y el recorrido de inicio de sesión a biblioteca sin llamar a servicios reales: las solicitudes del navegador se interceptan con dobles de prueba explícitos.
+
+GitHub Actions ejecuta validación de entorno, audit de dependencias, lint, comprobación de tipos, pruebas unitarias, build de producción y E2E para pull requests a `develop` y `main`. Dependabot abre semanalmente PRs de actualización para npm y GitHub Actions.
+
+Consulta [despliegue y seguridad](docs/deployment.md) para configuración productiva, límites del BFF, cabeceras, caché y manejo de errores.
+
 ## Ramas y contribución
 
 - `main` es la rama estable y predeterminada.
