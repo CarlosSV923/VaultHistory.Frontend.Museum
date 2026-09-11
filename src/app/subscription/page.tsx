@@ -1,2 +1,3 @@
-import { RoutePlaceholder } from '@/shared/ui/route-placeholder';
-export default function SubscriptionPage() { return <RoutePlaceholder eyebrow="Preferencias" title="Suscripción" description="Esta sección conectará tus preferencias de historias y recordatorios." />; }
+import { SubscriptionExperience } from '@/features/account/subscription-experience';
+
+export default function SubscriptionPage() { return <main id="main-content" className="route"><SubscriptionExperience /></main>; }

@@ -5,6 +5,8 @@ import { ThemeToggle } from '@/shared/theme/theme-toggle';
 const navigation = [
     { href: '/explore', label: 'Explorar' },
     { href: '/library', label: 'Biblioteca' },
+    { href: '/profile', label: 'Perfil' },
+    { href: '/subscription', label: 'Suscripción' },
     { href: '/sign-in', label: 'Iniciar sesión' },
     { href: '/register', label: 'Crear cuenta' },
 ];

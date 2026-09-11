@@ -64,9 +64,43 @@ button, input, select, textarea { font: inherit; }
 .route__eyebrow { margin: 0 0 .9rem; color: var(--lavender-deep); font-size: .86rem; font-weight: 700; }
 .route__card { max-width: 42rem; margin-top: 2.5rem; padding: 1.25rem 1.4rem; border-left: 3px solid var(--lavender); background: var(--surface); }
 .route__card p { margin-bottom: 0; }
+.account-page, .library-page { max-width: 68rem; }
+.page-heading { margin-bottom: 2.5rem; }
+.page-heading h1 { max-width: 12ch; margin: 0; font-family: Georgia, 'Times New Roman', serif; font-size: clamp(3.3rem, 8vw, 7.5rem); font-weight: 400; line-height: .91; letter-spacing: -.07em; }
+.page-heading > p:not(.route__eyebrow) { color: var(--muted); font-family: Georgia, 'Times New Roman', serif; font-size: 1.12rem; line-height: 1.55; }
+.account-form { display: grid; max-width: 42rem; gap: 1rem; margin-top: 2.5rem; padding: clamp(1.3rem, 4vw, 2.2rem); background: var(--surface); border: 1px solid var(--line); }
+.account-form label, .library-filters label { display: grid; gap: .45rem; color: var(--muted); font-size: .88rem; }
+.account-form input, .account-form select, .library-filters input, .library-filters select { min-height: 2.75rem; width: 100%; padding: .6rem .75rem; color: var(--ink); background: var(--paper); border: 1px solid var(--line); border-radius: .2rem; }
+.account-form button, .library-filters button, .subscription-card button, .pagination button { min-height: 2.7rem; padding: .65rem 1rem; color: var(--surface); background: var(--lavender-deep); border: 1px solid var(--lavender-deep); cursor: pointer; }
+.account-form button:disabled, .subscription-card button:disabled, .pagination button:disabled { opacity: .55; cursor: not-allowed; }
+.account-form__split { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+.check-field { grid-template-columns: auto 1fr; align-items: center; color: var(--ink) !important; }
+.check-field input { width: 1rem; min-height: 1rem; accent-color: var(--lavender-deep); }
+.field-hint, .account-form__switch, .account-page__link { color: var(--muted); font-size: .9rem; }
+.account-form__switch { margin: 0; }
+.account-form__switch a, .account-page__link a, .text-button { color: var(--lavender-deep); text-decoration: underline; text-underline-offset: .2rem; }
+.account-section, .danger-zone { max-width: 42rem; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--line); }
+.account-section h2, .danger-zone h2, .subscription-card h2, .story-form--wide h2 { margin: 0; font-family: Georgia, 'Times New Roman', serif; font-size: 1.75rem; font-weight: 400; letter-spacing: -.04em; }
+.danger-zone p, .subscription-card p { color: var(--muted); line-height: 1.55; }
+.danger-zone button { min-height: 2.7rem; padding: .65rem 1rem; color: #fff; background: #8e3531; border: 1px solid #8e3531; cursor: pointer; }
+.text-button { margin-top: .8rem; padding: 0; background: transparent; border: 0; cursor: pointer; }
+.story-form--wide { grid-template-columns: repeat(3, minmax(0, 1fr)); margin-top: 0; }
+.story-form--wide h2, .story-form--wide button { grid-column: 1 / -1; }
+.library-filters { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)) auto; gap: .8rem; align-items: end; margin: 2.5rem 0 1.2rem; padding: 1rem; background: var(--surface-alt); }
+.personal-stories { display: grid; grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr)); gap: 1px; background: var(--line); border: 1px solid var(--line); }
+.personal-stories article { display: flex; flex-direction: column; min-height: 17rem; padding: 1.25rem; background: var(--surface); }
+.personal-stories article > p { margin: 0; color: var(--lavender-deep); font-size: .78rem; }
+.personal-stories h2 { margin: 1.3rem 0; font-family: Georgia, 'Times New Roman', serif; font-size: 1.45rem; font-weight: 400; }
+.personal-stories article > span { display: -webkit-box; overflow: hidden; line-height: 1.55; -webkit-line-clamp: 5; -webkit-box-orient: vertical; }
+.personal-stories footer { display: flex; justify-content: space-between; align-items: center; gap: .5rem; margin-top: auto; padding-top: 1.5rem; color: var(--muted); font-size: .8rem; }
+.personal-stories footer button { padding: 0; color: var(--lavender-deep); background: transparent; border: 0; cursor: pointer; text-decoration: underline; }
+.pagination { display: flex; align-items: center; justify-content: center; gap: 1rem; margin-top: 1.5rem; color: var(--muted); font-size: .9rem; }
+.subscription-card { max-width: 42rem; padding: clamp(1.5rem, 4vw, 2.5rem); background: var(--surface); border: 1px solid var(--line); }
+.subscription-card__state { display: inline-block; margin-top: 0 !important; padding: .25rem .55rem; color: var(--surface) !important; background: var(--muted); border-radius: 99px; font-size: .78rem; font-weight: 700; }
+.subscription-card__state[data-enabled='true'] { background: var(--lavender-deep); }
 .state { max-width: 42rem; margin: 8rem auto; padding: 1.6rem; border: 1px solid var(--line); background: var(--surface); }
 .state h1 { margin-top: 0; font-family: Georgia, 'Times New Roman', serif; font-weight: 400; }
 .state p { color: var(--muted); line-height: 1.5; }
 .state button { min-height: 2.5rem; margin-top: 1rem; padding: .5rem .9rem; color: var(--surface); background: var(--lavender-deep); border: 0; cursor: pointer; }
-@media (max-width: 760px) { .shell__header { grid-template-columns: 1fr auto; gap: .7rem; } .shell__nav { grid-column: 1 / -1; grid-row: 2; justify-content: flex-start; overflow-x: auto; flex-wrap: nowrap; } .explore__hero, .visitor-experience { grid-template-columns: 1fr; min-height: 0; } .explore__hero { padding-bottom: 2.5rem; } .explore__mark { min-height: 11rem; } .story-grid { grid-template-columns: 1fr; } .visitor-library { grid-column: auto; } }
+@media (max-width: 760px) { .shell__header { grid-template-columns: 1fr auto; gap: .7rem; } .shell__nav { grid-column: 1 / -1; grid-row: 2; justify-content: flex-start; overflow-x: auto; flex-wrap: nowrap; } .explore__hero, .visitor-experience { grid-template-columns: 1fr; min-height: 0; } .explore__hero { padding-bottom: 2.5rem; } .explore__mark { min-height: 11rem; } .story-grid { grid-template-columns: 1fr; } .visitor-library { grid-column: auto; } .account-form__split, .story-form--wide, .library-filters { grid-template-columns: 1fr; } .story-form--wide h2, .story-form--wide button { grid-column: auto; } .pagination { flex-wrap: wrap; } }
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; } }

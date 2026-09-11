@@ -31,7 +31,11 @@ cp .env.example .env.local
 pnpm dev
 ```
 
-`NEXT_PUBLIC_HISTORY_API_URL` y `NEXT_PUBLIC_USER_API_URL` son orígenes públicos configurables. `HISTORY_FRONTEND_TOKEN` es exclusivamente de servidor: no se debe renombrar con el prefijo `NEXT_PUBLIC_` ni incluir en el cliente.
+`USER_API_URL`, `HISTORY_API_URL` y `HISTORY_FRONTEND_TOKEN` son exclusivamente de servidor: no se deben renombrar con el prefijo `NEXT_PUBLIC_` ni incluir en el cliente. La sesión autenticada se conserva en una cookie HTTP-only y las rutas BFF reenvían las solicitudes autorizadas a User y History.
+
+## Cuenta, biblioteca y suscripción
+
+`/register` y `/sign-in` usan User desde rutas server-side y nunca guardan el JWT en `localStorage`. Las rutas `/library`, `/profile` y `/subscription` consumen únicamente las rutas BFF del frontend para listar, crear y retirar historias personales, actualizar perfil, contraseña y preferencias de cumpleaños. Una sesión vencida devuelve a inicio de sesión sin revelar historias de otra cuenta.
 
 ## Tema y accesibilidad
 
